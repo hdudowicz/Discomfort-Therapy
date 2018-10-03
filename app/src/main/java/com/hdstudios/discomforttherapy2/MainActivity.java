@@ -17,7 +17,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -64,7 +67,12 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        ChallengeAdapter adapter = new ChallengeAdapter(this.getApplicationContext());
 
+        ArrayList<Challenge> challenges = new ArrayList<Challenge>();
+        challenges.add(new Challenge("Jeff", null));
+        challenges.add(new Challenge("Jeff2", null));
+        adapter.addAll(challenges);
     }
 
 

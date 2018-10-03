@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 public class ChallengeAdapter extends ArrayAdapter<Challenge> {
 
-    public ChallengeAdapter(@NonNull Context context, int resource) {
-        super(context, resource);
+    public ChallengeAdapter(@NonNull Context context) {
+        super(context, 0);
     }
 
     @Override
