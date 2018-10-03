@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="500dp"
+    android:layout_height="500dp"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="500dp" android:layout_height="500dp">
+    app:cardUseCompatPadding="true"
+    card_view:cardCornerRadius="8dp"
+    card_view:cardBackgroundColor="@android:color/white">
+
+    <RelativeLayout
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/card_view">
 
     <ImageView
-        android:layout_width="500dp"
-        android:layout_height="500dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/cardImage"/>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -17,4 +27,5 @@
         android:text="TextView"
         tools:text="jeff" />
 
-</RelativeLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
