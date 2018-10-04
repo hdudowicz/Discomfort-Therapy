@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 public class ChallengeAdapter extends ArrayAdapter<Challenge> {
 
     public ChallengeAdapter(@NonNull Context context) {
@@ -25,6 +27,8 @@ public class ChallengeAdapter extends ArrayAdapter<Challenge> {
             contentView = inflater.inflate(R.layout.card_view, parent, false);
             holder = new ViewHolder(contentView);
             contentView.setTag(holder);
+            Glide.with(getContext()).load("https://afinde-production.s3.amazonaws.com/uploads/c0db6872-9be3-4eaf-9255-20dbe9809e33.jpg")
+                    .into(holder.image);
         } else {
             holder = (ViewHolder) contentView.getTag();
         }

@@ -2,27 +2,27 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:layout_width="500dp"
-    android:layout_height="500dp"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="300dp">
 
     <RelativeLayout
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:id="@+id/card_view">
-
-    <ImageView
+        android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/cardImage"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/titleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:text="TextView"
-        tools:text="jeff" />
+        <ImageView
+            android:id="@+id/cardImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/cardImage"
+            android:text="TextView"
+            tools:text="jeff" />
 
     </RelativeLayout>
 </android.support.v7.widget.CardView>
