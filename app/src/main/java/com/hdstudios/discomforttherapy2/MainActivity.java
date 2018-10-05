@@ -1,5 +1,6 @@
 package com.hdstudios.discomforttherapy2;
 
+import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,7 +23,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ChallengeFragment.OnFragmentInteractionListener{
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -59,13 +60,7 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
-        ChallengeAdapter adapter = new ChallengeAdapter(this.getApplicationContext());
 
-        ArrayList<Challenge> challenges = new ArrayList<Challenge>();
-        challenges.add(new Challenge("Jeff", null));
-        challenges.add(new Challenge("Jeff2", null));
-        adapter.addAll(challenges);
-        adapter.notifyDataSetChanged();
     }
 
 
@@ -89,6 +84,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 
     /**
@@ -140,7 +140,18 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            switch(position){
+                case 0:
+                    return ChallengeFragment.newInstance("", "");
+                case 1:
+                    return ChallengeFragment.newInstance("", "");
+
+                case 2:
+                    return ChallengeFragment.newInstance("", "");
+
+                default:
+                    return ChallengeFragment.newInstance("", "");
+            }
         }
 
         @Override
