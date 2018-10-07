@@ -34,16 +34,16 @@ public class ChallengeAdapter extends ArrayAdapter<Challenge> {
             contentView = inflater.inflate(R.layout.card_view, parent, false);
 
 
-        } else {
-
-            ImageView image = (ImageView) contentView.findViewById(R.id.cardImage);
-            TextView name = (TextView) contentView.findViewById(R.id.titleTextView);
-            Challenge currentChallenge = challengeList.get(position);
-
-            Glide.with(getContext()).load("https://afinde-production.s3.amazonaws.com/uploads/c0db6872-9be3-4eaf-9255-20dbe9809e33.jpg")
-                    .into(image);
-            name.setText(challengeList.get(position).title);
         }
+
+        ImageView image = (ImageView) contentView.findViewById(R.id.cardImage);
+        TextView name = (TextView) contentView.findViewById(R.id.titleTextView);
+        Challenge currentChallenge = challengeList.get(position);
+
+        Glide.with(getContext()).load("https://afinde-production.s3.amazonaws.com/uploads/c0db6872-9be3-4eaf-9255-20dbe9809e33.jpg")
+                .into(image);
+        name.setText(challengeList.get(position).title);
+
 
         return contentView;
     }
