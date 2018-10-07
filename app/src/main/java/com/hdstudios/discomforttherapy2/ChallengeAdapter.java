@@ -12,37 +12,40 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ChallengeAdapter extends ArrayAdapter<Challenge> {
 
-    public ChallengeAdapter(@NonNull Context context) {
-        super(context, 0);
+    private Context mContext;
+    private ArrayList<Challenge> challengeList = new ArrayList<>();
+
+    public ChallengeAdapter(@NonNull Context context, @NonNull ArrayList<Challenge> objects) {
+        super(context, 0, objects);
+        mContext = context;
+        challengeList = objects;
     }
 
     @Override
     public View getView(int position, View contentView, ViewGroup parent) {
-        ViewHolder holder;
 
         if (contentView == null) {
             LayoutInflater inflater = LayoutInflater.from(getContext());
             contentView = inflater.inflate(R.layout.card_view, parent, false);
-            holder = new ViewHolder(contentView);
-            contentView.setTag(holder);
-            Glide.with(getContext()).load("https://afinde-production.s3.amazonaws.com/uploads/c0db6872-9be3-4eaf-9255-20dbe9809e33.jpg")
-                    .into(holder.image);
+
+
         } else {
-            holder = (ViewHolder) contentView.getTag();
+
+            ImageView image = (ImageView) contentView.findViewById(R.id.cardImage);
+            TextView name = (TextView) contentView.findViewById(R.id.titleTextView);
+            Challenge currentChallenge = challengeList.get(position);
+
+            Glide.with(getContext()).load("https://afinde-production.s3.amazonaws.com/uploads/c0db6872-9be3-4eaf-9255-20dbe9809e33.jpg")
+                    .into(image);
+            name.setText(challengeList.get(position).title);
         }
 
         return contentView;
     }
 
-    private static class ViewHolder {
-        public TextView name;
-        public ImageView image;
-
-        public ViewHolder(View view) {
-            this.name = (TextView) view.findViewById(R.id.titleTextView);
-            this.image = (ImageView) view.findViewById(R.id.cardImage);
-        }
-    }
 }

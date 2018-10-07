@@ -104,24 +104,20 @@ public class ChallengeFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         SwipeFlingAdapterView flingContainer = (SwipeFlingAdapterView) view.findViewById(R.id.frame);
-        final ArrayList<String> al = new ArrayList<>();
-        al.add("php");
-        al.add("c");
-        al.add("python");
-        al.add("java");
-        al.add("html");
-        al.add("c++");
-        al.add("css");
-        al.add("javascript");
-        final ArrayAdapter<String> adapter;
-        adapter = new ArrayAdapter<String>(getContext(), R.layout.item, R.id.helloText, al );
-        flingContainer.setAdapter(adapter);
+
+        final ArrayList<Challenge> al = new ArrayList<>();
+        al.add(new Challenge("Title 1"));
+        al.add(new Challenge("Title 2"));
+        al.add(new Challenge("Title 3"));
+        al.add(new Challenge("Title 4"));
+        final ChallengeAdapter challengeAdapter = new ChallengeAdapter(getContext(), al);
+        flingContainer.setAdapter(challengeAdapter);
 
         flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
             @Override
             public void removeFirstObjectInAdapter() {
                 al.remove(0);
-                adapter.notifyDataSetChanged();
+                challengeAdapter.notifyDataSetChanged();
             }
 
             @Override
