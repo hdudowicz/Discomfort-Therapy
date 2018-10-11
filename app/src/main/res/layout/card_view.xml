@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="250dp"
-    android:layout_height="250dp"
+<FrameLayout android:layout_width="match_parent"
+    android:layout_height="350dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_gravity="center">
+    android:layout_gravity="center"
+    android:padding="10dp">
 
     <RelativeLayout
         android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/cardview_dark_background">
 
         <ImageView
             android:id="@+id/cardImage"
@@ -19,9 +21,24 @@
             android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/cardImage"
+            android:paddingLeft="10dp"
             android:text="TextView"
-            tools:text="jeff" />
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:text="Challenge Title"
+            android:layout_above="@id/catTextView"/>
+
+        <TextView
+            android:id="@+id/catTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:paddingLeft="10dp"
+            android:paddingBottom="10dp"
+            android:text="Challenge Category"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
 
     </RelativeLayout>
 </FrameLayout>
