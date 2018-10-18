@@ -44,5 +44,4 @@ public class ChallengeAdapter extends ArrayAdapter<Challenge> {
 
         return contentView;
     }
-
 }

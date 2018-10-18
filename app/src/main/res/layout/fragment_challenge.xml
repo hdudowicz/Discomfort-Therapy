@@ -12,7 +12,6 @@
         android:layout_height="match_parent"
         app:rotation_degrees="15.5"
         tools:context=".MainActivity"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
