@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'org.greenrobot.greendao'
+
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -16,7 +16,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    buildToolsVersion '28.0.2'
+    buildToolsVersion '28.0.3'
 }
 
 dependencies {
@@ -34,5 +34,6 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.3.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.3.0'
     implementation 'com.lorentzos.swipecards:library:1.0.9@aar'
-    implementation 'org.greenrobot:greendao:3.2.2'
+    implementation 'com.github.satyan:sugar:1.3'
+
 }

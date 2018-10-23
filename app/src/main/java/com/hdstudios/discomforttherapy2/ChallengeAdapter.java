@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChallengeAdapter extends ArrayAdapter<Challenge> {
-
     private Context mContext;
     private ArrayList<Challenge> challengeList = new ArrayList<>();
 
@@ -40,7 +39,7 @@ public class ChallengeAdapter extends ArrayAdapter<Challenge> {
 
         Glide.with(getContext()).load("https://afinde-production.s3.amazonaws.com/uploads/c0db6872-9be3-4eaf-9255-20dbe9809e33.jpg")
                 .into(image);
-        name.setText(challengeList.get(position).title);
+        name.setText(challengeList.get(position).getText());
 
         return contentView;
     }

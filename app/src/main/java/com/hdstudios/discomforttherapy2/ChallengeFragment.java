@@ -97,10 +97,10 @@ public class ChallengeFragment extends Fragment {
         SwipeFlingAdapterView flingContainer = (SwipeFlingAdapterView) view.findViewById(R.id.frame);
 
         final ArrayList<Challenge> al = new ArrayList<>();
-        al.add(new Challenge("Title 1"));
-        al.add(new Challenge("Title 2"));
-        al.add(new Challenge("Title 3"));
-        al.add(new Challenge("Title 4"));
+        al.add(new Challenge(1, "Title 1", 1));
+        al.add(new Challenge(2, "Title 2", 2));
+        al.add(new Challenge(3, "Title 3", 3));
+        al.add(new Challenge(4, "Title 4", 4));
         final ChallengeAdapter challengeAdapter = new ChallengeAdapter(getContext(), al);
         flingContainer.setAdapter(challengeAdapter);
 
