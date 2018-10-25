@@ -2,10 +2,11 @@ package com.hdstudios.discomforttherapy2;
 
 import android.media.Image;
 
+import com.orm.SugarRecord;
 
-public class Challenge {
+
+public class Challenge extends SugarRecord<Challenge> {
     private Integer ID;
-
     private String text;
     private Integer category;
 
