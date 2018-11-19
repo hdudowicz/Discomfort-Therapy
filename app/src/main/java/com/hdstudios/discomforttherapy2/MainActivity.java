@@ -21,6 +21,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.activeandroid.ActiveAndroid;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements ChallengeFragment.OnFragmentInteractionListener{
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements ChallengeFragment
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ActiveAndroid.initialize(this.getApplication());
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
